@@ -25,7 +25,7 @@ Este é o meu portfólio web, desenvolvido com o objetivo de apresentar meus pro
 
 ## 🚀 Como visualizar
 
-- Acesse o site online:   
+- Acesse o site online: https://joao-pedro-costa-dev.netlify.app/  
 - Ou clone este repositório e abra o arquivo `index.html` diretamente no navegador.
 
 ```bash
