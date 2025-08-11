@@ -214,7 +214,7 @@
                     <div class="contact-buttons">
                        <a href="https://github.com/JoaoPedro-Costa-Oliveira" target="_blank" class="btn">Github</a>
                        <a href="https://www.linkedin.com/in/jo%C3%A3o-pedro-costa-de-oliveira-1bb5912b8/" target="_blank" class="btn btn-secondary">Linkedin</a>
-                       <a href="https://www.instagram.com/jp._costa_/#" class="btn btn-secondary">Instagram</a>
+                        <a href="#" id="botao-contato-seguro" class="btn btn-secondary">Mande um Email</a>
                     </div>
                 </div>
                 <div class="contact-images">
@@ -234,5 +234,18 @@
     </footer>
 
     <script src="/static/js/script.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+    const botaoSeguro = document.getElementById('botao-contato-seguro');
+    const usuario = 'joaopedrocdev'; 
+    const dominio = 'gmail.com'; 
+    const assunto = 'Contato pelo Portfólio';
+    botaoSeguro.addEventListener('click', function(event) {
+      event.preventDefault(); 
+      const linkMailto = `mailto:${usuario}@${dominio}?subject=${assunto}`;
+      window.location.href = linkMailto;
+    });
+  });
+</script>
 </body>
 </html>
