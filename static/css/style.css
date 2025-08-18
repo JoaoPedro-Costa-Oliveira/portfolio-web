@@ -125,7 +125,7 @@ section { padding: 6rem 8%; position: relative; overflow: hidden; }
 .softskill-card h3 { margin-bottom: 0.5rem; }
 .skill-card box-icon { width: 45px; height: 45px; margin-bottom: 1rem; }
 
-/* SEÇÃO Projetos */
+/* SEÇÃO Projetos/Demos */
 .projects { background-color: var(--bg-color); }
 .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(600px, 1fr)); gap: 2rem; }
 .project-card { background-color: var(--secondary-bg-color); border-radius: 10px; overflow: hidden; display: flex; flex-direction: column; box-shadow: var(--card-shadow); transition: transform 0.3s ease, box-shadow 0.3s ease; }
@@ -135,6 +135,15 @@ section { padding: 6rem 8%; position: relative; overflow: hidden; }
 .project-info h3 { font-size: 1.3rem; margin-bottom: 0.5rem; }
 .project-info p { flex-grow: 1; margin-bottom: 1.5rem; }
 .project-links a { margin-right: 1rem; font-weight: 600; font-size: 0.9rem; }
+.demo iframe {width: 100%;height: auto;aspect-ratio: 16 / 9;border-radius: 8px;border: none;}
+.demo .carousel { width: 100%; border-radius: 8px; overflow: hidden; border: 1px solid #ddd; }
+.carousel-item { height: auto; background-color: transparent;}
+.carousel-item img { width: 100%; height: auto; object-fit: initial; }
+.carouselExampleIndicators { max-width: 560px; margin: 0 auto; }
+.demo { max-width: 800px; width: 100%;margin: 2rem auto;}
+.demo .carousel { width: 100%; height: auto; aspect-ratio: 16 / 9; border-radius: 8px; border: none;}
+.carousel-item, .carousel-inner {height: 100%; }
+.carousel-item img { height: 100%; width: 100%; object-fit: cover;}
 
 /* SEÇÃO Contato */
 .contact { background-color: var(--secondary-bg-color); }
@@ -213,6 +222,7 @@ section { padding: 6rem 8%; position: relative; overflow: hidden; }
     .contact-buttons {
         justify-content: center;
     }
+    .demo{ margin: auto; display: flex; width: 500px;height: 500px;}
 }
 
 @media (max-width: 768px) {
@@ -231,4 +241,5 @@ section { padding: 6rem 8%; position: relative; overflow: hidden; }
     .home-content h1 {
         font-size: 2.2rem;
     }
+    .demo{ margin: auto; display: flex; width: 300px;height: 300px;}
 }
