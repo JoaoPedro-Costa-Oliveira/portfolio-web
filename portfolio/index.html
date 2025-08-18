@@ -9,8 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
-    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
     <header class="header">
@@ -23,12 +22,12 @@
             <a href="#projects" class="nav-link">Projetos</a>
             <a href="#contact" class="nav-link">Contato</a>
         </nav>
-
+        
         <div class="menu-icon">
             <box-icon name='menu'></box-icon>
         </div>
     </header>
-
+    
     <main>
         <section class="home" id="home">
             <div class="home-left-panel">
@@ -49,8 +48,8 @@
                 </div>
             </div>
         </section>
-
-        <section class="about" id="about">
+        
+        <section class="about" id="about" data-aos="fade-up">
             <h2 class="section-title">Sobre mim</h2>
             <div class="about-container">
                 <div class="about-image">
@@ -61,8 +60,8 @@
                 </div>
             </div>
         </section>
-
-        <section class="skills" id="skills">
+        
+        <section class="skills" id="skills" data-aos="fade-up">
             <h2 class="section-title">Minhas Habilidades</h2>
             <div class="skills-grid">
                 <div class="skill-card"><box-icon type='logo' name='python' color='#3776AB'></box-icon><span>Python/Frameworks</span></div>
@@ -77,11 +76,11 @@
                 <div class="skill-card"><box-icon type='logo' name='visual-studio' color='#0078D4'></box-icon><span>Vs Code</span></div>
                 <div class="skill-card"><box-icon type='logo' name='microsoft' color='#0078D4'></box-icon><span>Pacote Office</span></div>
                 <div class="skill-card"><box-icon name='data' type='solid' color='#0052CC'></box-icon><span>Scrum/Jira</span></div>
-
+                
             </div>
-
+            
             <h2 class="section-title softskills-title">Softskills</h2>
-            <div class="softskills-grid">
+            <div class="softskills-grid" data-aos="fade-up">
                 <div class="softskill-card"><h3>Dedicado</h3><p>Sempre busco dar o meu melhor em tudo o que me proponho.</p></div>
                 <div class="softskill-card"><h3>Proativo</h3><p>Enfrento desafios com persistência e nunca desisto até encontrar a melhor solução.</p></div>
                 <div class="softskill-card"><h3>Adaptabilidade</h3><p>Tenho facilidade em me ajustar a novas tecnologias e mudanças nos projetos, mantendo a produtividade.</p></div>
@@ -94,15 +93,15 @@
                 
             </div>
         </section>
-         
+        
         <!-- Comentario para depois colocar as demos --> 
-         <!-- Comentario para depois colocar as demos --> 
-          <!-- Comentario para depois colocar as demos --> 
-           <!-- Comentario para depois colocar as demos --> 
-         
+        <!-- Comentario para depois colocar as demos --> 
+        <!-- Comentario para depois colocar as demos --> 
+        <!-- Comentario para depois colocar as demos --> 
+        
         <section class="projects" id="projects">
             <h2 class="section-title">Projetos</h2>
-            <div class="projects-grid">
+            <div class="projects-grid" data-aos="fade-up">
                 <div class="project-card">
                     <img src="/portfolio/midia/projetos/Extrator Das.png" alt="Extrator Das">
                     <div class="project-info">
@@ -117,45 +116,45 @@
                 <!-- Comentario para depois tirar e colocar mais projetos --> 
                 
                 <!--
-                <div class="project-card">
-                    <img src="5.jpg" alt="Imagem do Projeto 2">
-                    <div class="project-info">
-                        <h3>Nome do Projeto 2</h3>
-                        <p>Breve descrição do que o projeto faz, os desafios e as tecnologias usadas.</p>
-                        <div class="project-links">
-                            <a href="#" target="_blank">Ver Demo</a>
-                            <a href="#" target="_blank">GitHub</a>
+                    <div class="project-card">
+                        <img src="5.jpg" alt="Imagem do Projeto 2">
+                        <div class="project-info">
+                            <h3>Nome do Projeto 2</h3>
+                            <p>Breve descrição do que o projeto faz, os desafios e as tecnologias usadas.</p>
+                            <div class="project-links">
+                                <a href="#" target="_blank">Ver Demo</a>
+                                <a href="#" target="_blank">GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <img src="5.jpg" alt="Imagem do Projeto 3">
+                        <div class="project-info">
+                            <h3>Nome do Projeto 3</h3>
+                            <p>Breve descrição do que o projeto faz, os desafios e as tecnologias usadas.</p>
+                            <div class="project-links">
+                                <a href="#" target="_blank">Ver Demo</a>
+                                <a href="#" target="_blank">GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+                    --> 
+                    <div class="project-card">
+                        <img src="/portfolio/midia/projetos/horas_pro.png" alt="Imagem do Projeto 4">
+                        <div class="project-info">
+                            <h3>Horas Pro</h3>
+                            <p>Gerenciador de horas de estágio completo com backend Python/Flask. Salve seus dados de forma segura e privada em um banco de dados local. Inclui dashboard e relatórios. Disponível em duas versões: uma completa com Python/Flask (para uso local) e uma demo online em JavaScript puro.</p>
+                            <div class="project-links">
+                                <a href="https://horaspro.netlify.app/" target="_blank">Ver Site</a>
+                                <a href="https://github.com/JoaoPedro-Costa-Oliveira/Horas-Pro" target="_blank">GitHub</a>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="project-card">
-                    <img src="5.jpg" alt="Imagem do Projeto 3">
-                    <div class="project-info">
-                        <h3>Nome do Projeto 3</h3>
-                        <p>Breve descrição do que o projeto faz, os desafios e as tecnologias usadas.</p>
-                        <div class="project-links">
-                            <a href="#" target="_blank">Ver Demo</a>
-                            <a href="#" target="_blank">GitHub</a>
-                        </div>
-                    </div>
-                </div>
-                --> 
-                <div class="project-card">
-                    <img src="/portfolio/midia/projetos/horas_pro.png" alt="Imagem do Projeto 4">
-                    <div class="project-info">
-                        <h3>Horas Pro</h3>
-                        <p>Gerenciador de horas de estágio completo com backend Python/Flask. Salve seus dados de forma segura e privada em um banco de dados local. Inclui dashboard e relatórios. Disponível em duas versões: uma completa com Python/Flask (para uso local) e uma demo online em JavaScript puro.</p>
-                        <div class="project-links">
-                            <a href="https://horaspro.netlify.app/" target="_blank">Ver Site</a>
-                            <a href="https://github.com/JoaoPedro-Costa-Oliveira/Horas-Pro" target="_blank">GitHub</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="projects" id="projects">
-            <h2 class="section-title">Projetos Acadêmico</h2>
-            <div class="projects-grid">
+            </section>
+            <section class="projects" id="projects" >
+                <h2 class="section-title">Projetos Acadêmico</h2>
+            <div class="projects-grid" data-aos="fade-up">
                 <div class="project-card">
                     <img src="/portfolio/midia/projetos_academicos/cesar_cosmic_shield.png" alt="Cesar Cosmic Shield">
                     <div class="project-info">
@@ -179,7 +178,7 @@
                     </div>
                 </div>
                 <div class="project-card">
-                     <img src="/portfolio/midia/projetos_academicos/crud_turismo.png" alt="Turismo Connect">
+                    <img src="/portfolio/midia/projetos_academicos/crud_turismo.png" alt="Turismo Connect">
                     <div class="project-info">
                         <h3>Turismo Connect</h3>
                         <p>Projeto acadêmico que demonstra a construção de um sistema CRUD completo em Python. A aplicação gerencia o ciclo de vida de registros (Criar, Ler, Atualizar, Deletar) em um arquivo CSV, utilizando a biblioteca Pandas para a manipulação dos dados e os princípios da Programação Orientada a Objetos para a estrutura.</p>
@@ -202,16 +201,16 @@
                 </div>
             </div>
         </section>
-
-        <section class="contact" id="contact">
+        
+        <section class="contact" id="contact" data-aos="fade-up">
             <h2 class="section-title">Entre em Contato</h2>
             <div class="contact-container">
                 <div class="contact-text">
                     <p>Fico sempre aberto a trocar ideias, compartilhar experiências e construir novas conexões na área de tecnologia. Acredito que o aprendizado é contínuo e que grandes oportunidades surgem quando estamos dispostos a colaborar e crescer em conjunto.</p>
                     <p>Se você também se interessa por desenvolvimento web, back-end, análise de dados, inteligência artificial ou quer apenas bater um papo sobre tecnologia, será um prazer me conectar com você. <br>Aqui estão minhas redes sociais:</p>
                     <div class="contact-buttons">
-                       <a href="https://github.com/JoaoPedro-Costa-Oliveira" target="_blank" class="btn">Github</a>
-                       <a href="https://www.linkedin.com/in/jo%C3%A3o-pedro-costa-de-oliveira-1bb5912b8/" target="_blank" class="btn btn-secondary">Linkedin</a>
+                        <a href="https://github.com/JoaoPedro-Costa-Oliveira" target="_blank" class="btn">Github</a>
+                        <a href="https://www.linkedin.com/in/jo%C3%A3o-pedro-costa-de-oliveira-1bb5912b8/" target="_blank" class="btn btn-secondary">Linkedin</a>
                         <a href="#" id="botao-contato-seguro" class="btn btn-secondary">Mande um Email</a>
                     </div>
                 </div>
@@ -222,7 +221,7 @@
             </div>
         </section>
     </main>
-
+    
     <footer class="footer">
         <p>&copy; 2025 João Pedro Costa. Todos os direitos reservados.</p>
         <div class="social-links">
@@ -230,8 +229,14 @@
             <a href="https://www.linkedin.com/in/jo%C3%A3o-pedro-costa-de-oliveira-1bb5912b8/" target="_blank"><box-icon type='logo' name='linkedin-square'></box-icon></a>
         </div>
     </footer>
-
+    
     <script src="/static/js/script.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
     <script>
     document.addEventListener('DOMContentLoaded', function() {
     const botaoSeguro = document.getElementById('botao-contato-seguro');
