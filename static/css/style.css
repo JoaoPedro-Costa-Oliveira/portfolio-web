@@ -276,6 +276,65 @@ section { padding: 6rem 8%; position: relative; overflow: hidden; }
   background-color: #0056b3;
  }
     
+ /* Configurações padrão para o overlay */
+.turn-phone-overlay {
+    display: none; /* Agora o aviso é sempre escondido por padrão */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    color: white;
+    z-index: 9999;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: sans-serif;
+    padding: 20px;
+}
+
+.turn-phone-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.phone-icon {
+    width: 60px;
+    height: 120px;
+    border: 5px solid white;
+    border-radius: 10px;
+    position: relative;
+    margin-bottom: 20px;
+    animation: rotatePhone 2s ease-in-out infinite;
+}
+
+.phone-icon::before {
+    content: '';
+    width: 5px;
+    height: 5px;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.turn-phone-content p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+}
+
+/* Animação para o ícone do celular */
+@keyframes rotatePhone {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(90deg); }
+    50% { transform: rotate(90deg); }
+    75% { transform: rotate(0deg); }
+}
 
 }
 @media (min-width: 769px) {

@@ -69,67 +69,70 @@ document.addEventListener('DOMContentLoaded', () => {
     handleHeaderScroll();
 });
 document.addEventListener('DOMContentLoaded', () => {
- const fullscreenButton = document.getElementById('fullscreen-button');
- const carouselElement = document.querySelector('.demo'); // Ou o elemento que você quer colocar em tela cheia
+    const fullscreenButton = document.getElementById('fullscreen-button');
+    const carouselElement = document.querySelector('.demo');
+    const rotateOverlay = document.querySelector('.turn-phone-overlay');
 
- if (fullscreenButton && carouselElement) {
-  fullscreenButton.addEventListener('click', () => {
-   if (!document.fullscreenElement) {
-    if (carouselElement.requestFullscreen) {
-     carouselElement.requestFullscreen();
-    } else if (carouselElement.mozRequestFullScreen) { /* Firefox */
-     carouselElement.mozRequestFullScreen();
-    } else if (carouselElement.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
-     carouselElement.webkitRequestFullscreen();
-    } else if (carouselElement.msRequestFullscreen) { /* IE/Edge */
-     carouselElement.msRequestFullscreen();
+    // Função para verificar se o dispositivo é um celular (largura <= 576px) e está em modo retrato
+    const isMobilePortrait = () => {
+        // A largura do viewport é menor ou igual a 576px (tamanho típico de celulares)
+        const isMobile = window.innerWidth <= 576;
+        // A altura é maior que a largura (orientação retrato)
+        const isPortrait = window.innerHeight > window.innerWidth;
+        return isMobile && isPortrait;
+    };
+
+    if (fullscreenButton && carouselElement && rotateOverlay) {
+        fullscreenButton.addEventListener('click', () => {
+            if (!document.fullscreenElement) {
+                // Tentativa de entrar em tela cheia
+                if (carouselElement.requestFullscreen) {
+                    carouselElement.requestFullscreen();
+                } else if (carouselElement.webkitRequestFullscreen) {
+                    carouselElement.webkitRequestFullscreen();
+                }
+
+                // Verifica se é um celular em modo retrato APÓS a tentativa de tela cheia
+                if (isMobilePortrait()) {
+                    rotateOverlay.style.display = 'flex';
+                }
+            } else {
+                // Tentativa de sair da tela cheia
+                if (document.exitFullscreen) {
+                    document.exitFullscreen();
+                } else if (document.webkitExitFullscreen) {
+                    document.webkitExitFullscreen();
+                }
+            }
+        });
+
+        // Evento para esconder o aviso ao sair da tela cheia (por botão ou gesto)
+        document.addEventListener('fullscreenchange', () => {
+            if (!document.fullscreenElement) {
+                // Se saiu da tela cheia, esconda o overlay
+                rotateOverlay.style.display = 'none';
+            }
+            updateButtonText(); // Adicione essa função para atualizar o texto
+        });
+
+        // Evento para esconder o aviso quando o celular for girado em tela cheia
+        window.addEventListener('resize', () => {
+            if (document.fullscreenElement && !isMobilePortrait()) {
+                // Se estiver em tela cheia e não for mais retrato, esconda o overlay
+                rotateOverlay.style.display = 'none';
+            }
+        });
+
+        // Função para atualizar o texto do botão, se desejar
+        const updateButtonText = () => {
+            if (document.fullscreenElement) {
+                fullscreenButton.textContent = 'Sair da Tela Cheia';
+            } else {
+                fullscreenButton.textContent = 'Tela Cheia';
+            }
+        };
+
+        // Chame a função inicialmente para garantir o texto correto
+        updateButtonText();
     }
-    fullscreenButton.textContent = 'Sair da Tela Cheia';
-   } else {
-    if (document.exitFullscreen) {
-     document.exitFullscreen();
-    } else if (document.mozCancelFullScreen) { /* Firefox */
-     document.mozCancelFullScreen();
-    } else if (document.webkitExitFullscreen) { /* Chrome, Safari & Opera */
-     document.webkitExitFullscreen();
-    } else if (document.msExitFullscreen) { /* IE/Edge */
-     document.msExitFullscreen();
-    }
-    fullscreenButton.textContent = 'Tela Cheia';
-   }
-  });
-
-  // Opcional: Atualizar o texto do botão ao sair da tela cheia por outros meios (botão padrão do navegador)
-  document.addEventListener('fullscreenchange', () => {
-   if (!document.fullscreenElement) {
-    fullscreenButton.textContent = 'Tela Cheia';
-   } else {
-    fullscreenButton.textContent = 'Sair da Tela Cheia';
-   }
-  });
-
-  document.addEventListener('mozfullscreenchange', () => {
-   if (!document.mozFullScreen) {
-    fullscreenButton.textContent = 'Tela Cheia';
-   } else {
-    fullscreenButton.textContent = 'Sair da Tela Cheia';
-   }
-  });
-
-  document.addEventListener('webkitfullscreenchange', () => {
-   if (!document.webkitIsFullScreen) {
-    fullscreenButton.textContent = 'Tela Cheia';
-   } else {
-    fullscreenButton.textContent = 'Sair da Tela Cheia';
-   }
-  });
-
-  document.addEventListener('msfullscreenchange', () => {
-   if (!document.msFullscreenElement) {
-    fullscreenButton.textContent = 'Tela Cheia';
-   } else {
-    fullscreenButton.textContent = 'Sair da Tela Cheia';
-   }
-  });
- }
 });
