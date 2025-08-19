@@ -68,3 +68,13 @@ document.addEventListener('DOMContentLoaded', () => {
     updateActiveLink();
     handleHeaderScroll();
 });
+document.addEventListener('DOMContentLoaded', () => {
+    const closeButton = document.querySelector('.close-button');
+    const overlay = document.querySelector('.turn-phone-overlay');
+
+    if (closeButton && overlay) {
+        closeButton.addEventListener('click', () => {
+            overlay.style.display = 'none';
+        });
+    }
+});
