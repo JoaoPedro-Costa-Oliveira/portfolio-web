@@ -116,11 +116,15 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         // Evento para esconder o aviso quando o celular for girado em tela cheia
+        let resizeTimer;
         window.addEventListener('resize', () => {
-            if (document.fullscreenElement && !isMobilePortrait()) {
-                // Se estiver em tela cheia e não for mais retrato, esconda o overlay
-                rotateOverlay.style.display = 'none';
-            }
+            clearTimeout(resizeTimer)
+            resizeTimer = setTimeout(() =>{
+                if (document.fullscreenElement && !isMobilePortrait()) {
+                    // Se estiver em tela cheia e não for mais retrato, esconda o overlay
+                    rotateOverlay.style.display = 'none';
+                }
+            },2000);
         });
 
         // Função para atualizar o texto do botão, se desejar
