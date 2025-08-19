@@ -68,3 +68,68 @@ document.addEventListener('DOMContentLoaded', () => {
     updateActiveLink();
     handleHeaderScroll();
 });
+document.addEventListener('DOMContentLoaded', () => {
+ const fullscreenButton = document.getElementById('fullscreen-button');
+ const carouselElement = document.querySelector('.demo'); // Ou o elemento que você quer colocar em tela cheia
+
+ if (fullscreenButton && carouselElement) {
+  fullscreenButton.addEventListener('click', () => {
+   if (!document.fullscreenElement) {
+    if (carouselElement.requestFullscreen) {
+     carouselElement.requestFullscreen();
+    } else if (carouselElement.mozRequestFullScreen) { /* Firefox */
+     carouselElement.mozRequestFullScreen();
+    } else if (carouselElement.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
+     carouselElement.webkitRequestFullscreen();
+    } else if (carouselElement.msRequestFullscreen) { /* IE/Edge */
+     carouselElement.msRequestFullscreen();
+    }
+    fullscreenButton.textContent = 'Sair da Tela Cheia';
+   } else {
+    if (document.exitFullscreen) {
+     document.exitFullscreen();
+    } else if (document.mozCancelFullScreen) { /* Firefox */
+     document.mozCancelFullScreen();
+    } else if (document.webkitExitFullscreen) { /* Chrome, Safari & Opera */
+     document.webkitExitFullscreen();
+    } else if (document.msExitFullscreen) { /* IE/Edge */
+     document.msExitFullscreen();
+    }
+    fullscreenButton.textContent = 'Tela Cheia';
+   }
+  });
+
+  // Opcional: Atualizar o texto do botão ao sair da tela cheia por outros meios (botão padrão do navegador)
+  document.addEventListener('fullscreenchange', () => {
+   if (!document.fullscreenElement) {
+    fullscreenButton.textContent = 'Tela Cheia';
+   } else {
+    fullscreenButton.textContent = 'Sair da Tela Cheia';
+   }
+  });
+
+  document.addEventListener('mozfullscreenchange', () => {
+   if (!document.mozFullScreen) {
+    fullscreenButton.textContent = 'Tela Cheia';
+   } else {
+    fullscreenButton.textContent = 'Sair da Tela Cheia';
+   }
+  });
+
+  document.addEventListener('webkitfullscreenchange', () => {
+   if (!document.webkitIsFullScreen) {
+    fullscreenButton.textContent = 'Tela Cheia';
+   } else {
+    fullscreenButton.textContent = 'Sair da Tela Cheia';
+   }
+  });
+
+  document.addEventListener('msfullscreenchange', () => {
+   if (!document.msFullscreenElement) {
+    fullscreenButton.textContent = 'Tela Cheia';
+   } else {
+    fullscreenButton.textContent = 'Sair da Tela Cheia';
+   }
+  });
+ }
+});
