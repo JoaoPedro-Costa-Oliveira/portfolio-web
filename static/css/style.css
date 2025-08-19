@@ -244,11 +244,11 @@ section { padding: 6rem 8%; position: relative; overflow: hidden; }
     .demo {
     width: 100%;
     margin: 2rem auto;
-    padding: 0 1rem; /* Adiciona padding para evitar que toque nas bordas */
+    padding: 0 1rem; 
   }
   .demo .carousel {
     width: 100%;
-    height: auto; /* Permite que a altura se ajuste com a largura */
+    height: auto; 
     border-radius: 8px;
     border: none;
   }
@@ -259,10 +259,10 @@ section { padding: 6rem 8%; position: relative; overflow: hidden; }
   .carousel-item img {
     width: 100%;
     height: auto;
-    object-fit: contain; /* Garante que a imagem seja contida dentro do contêiner sem cortar */
+    object-fit: contain; 
   }
   #fullscreen-button {
-  display: block; /* Mostra o botão em dispositivos móveis */
+  display: block; 
   margin: 10px auto;
   padding: 8px 15px;
   border: none;
@@ -276,9 +276,8 @@ section { padding: 6rem 8%; position: relative; overflow: hidden; }
   background-color: #0056b3;
  }
     
- /* Configurações padrão para o overlay */
-.turn-phone-overlay {
-    display: none; /* Agora o aviso é sempre escondido por padrão */
+ .turn-phone-overlay {
+    display: none;
     position: fixed;
     top: 0;
     left: 0;
@@ -336,9 +335,10 @@ section { padding: 6rem 8%; position: relative; overflow: hidden; }
     75% { transform: rotate(0deg); }
 }
 
+
+@media screen and (max-width: 450px) and (orientation: portrait) {
+    .turn-phone-overlay {
+        display: flex;
+    }
 }
-@media (min-width: 769px) {
- #fullscreen-button {
-  display: none; /* Oculta o botão em telas maiores, se desejado */
- }
 }
