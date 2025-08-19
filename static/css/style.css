@@ -184,6 +184,26 @@ section { padding: 6rem 8%; position: relative; overflow: hidden; }
 .phone-icon { width: 60px; height: 120px; border: 5px solid white; border-radius: 10px; position: relative; margin-bottom: 20px; animation: rotatePhone 2s ease-in-out infinite;}
 .phone-icon::before { content: ''; width: 5px; height: 5px; background-color: white; border-radius: 50%; position: absolute; top: 10px; left: 50%; transform: translateX(-50%); }
 .turn-phone-content p { font-size: 1.2rem; line-height: 1.5; }
+.close-button {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    font-size: 40px;
+    font-weight: bold;
+    color: white;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    line-height: 1;
+    padding: 0;
+    opacity: 0.8;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.close-button:hover,
+.close-button:focus {
+    opacity: 1;
+}
 
 /* RESPONSIVIDADE  */
 @media (max-width: 992px) {
