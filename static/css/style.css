@@ -243,6 +243,28 @@ section { padding: 6rem 8%; position: relative; overflow: hidden; }
         justify-content: center;
     }
     .demo{ margin: auto; display: flex; width: 500px;height: 500px;}
+    .fullscreen-btn {
+    position: absolute;
+    bottom: 20px; 
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    padding: 5px; 
+
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    z-index: 10;
+    line-height: 0;
+}
+
+.fullscreen-btn svg {
+    width: 20px;  
+    height: 15px; 
+}
+
+.fullscreen-btn:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
 }
 
 @media (max-width: 768px) {
@@ -280,7 +302,7 @@ section { padding: 6rem 8%; position: relative; overflow: hidden; }
         width: 100%;
         height: auto;
         object-fit: contain; 
-    }
+    }  
 } 
     @media screen and (max-width: 450px) and (orientation: portrait) {
         .turn-phone-overlay {
