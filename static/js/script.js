@@ -78,3 +78,39 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+// Seleciona os elementos do HTML
+// AQUI ESTÁ A MUDANÇA: o container agora é o carrossel
+const container = document.getElementById('carouselExampleIndicators');
+const fullscreenBtn = document.getElementById('fullscreen-btn');
+const iconEnter = document.getElementById('icon-enter-fs');
+const iconExit = document.getElementById('icon-exit-fs');
+
+// Verifica se todos os elementos foram encontrados antes de adicionar os eventos
+if (container && fullscreenBtn && iconEnter && iconExit) {
+    
+    // Adiciona um "ouvinte" de evento de clique ao botão
+    fullscreenBtn.addEventListener('click', () => {
+        if (!document.fullscreenElement) {
+            // Pede para o CARROSSEL entrar em tela cheia
+            container.requestFullscreen().catch(err => {
+                alert(`Erro ao tentar entrar em tela cheia: ${err.message} (${err.name})`);
+            });
+        } else {
+            // Se já estiver, sai do modo tela cheia
+            document.exitFullscreen();
+        }
+    });
+
+    // Ouve por mudanças no estado de tela cheia (ex: usuário pressiona ESC)
+    document.addEventListener('fullscreenchange', () => {
+        if (document.fullscreenElement) {
+            // Entrou em tela cheia: mostra o ícone de "sair"
+            iconEnter.style.display = 'none';
+            iconExit.style.display = 'block';
+        } else {
+            // Saiu da tela cheia: mostra o ícone de "entrar"
+            iconEnter.style.display = 'block';
+            iconExit.style.display = 'none';
+        }
+    });
+}
